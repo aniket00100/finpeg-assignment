@@ -1,4 +1,5 @@
 import React from "react";
+import {getAllFunds, getFundsByName, printData} from "../../MockApi/mockAPI";
 import {
   ChevronDoubleDown,
   CartPlus,
@@ -10,6 +11,8 @@ import sbimf from "../../assets/sbimf.png";
 import img2 from "../../assets/increasing.png";
 
 const Card = () => {
+  // console.log(getFundsByName("sbi large"));
+  console.log(getFundsByName("sbi large and "));
   return (
     <div className="card card-custom mb-3 shadow mb-5 bg-white col-lg-6 col-sm-12">
       <div className="row">
