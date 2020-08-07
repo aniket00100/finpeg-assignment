@@ -30,16 +30,37 @@ class CardGroup extends React.Component {
   }
 
   getCards = (record) => {
+    let name = record.name;
+    name = name.slice(0, 25);
+    name += "...";
     return (
       <Card
-        name={record.name}
+        name={name}
         key={record.UID}
-        cardID={record.finpegCode}
+        cardID={record.isin}
+        fundType={record.FundType}
+        avg3YReturn={record.threeyearReturn}
+        oneYearReturn={record.oneyearReturn}
       ></Card>
     );
   };
 
-  paginate = () => {};
+  paginate = (pageNumber) => {
+    let currentPage = pageNumber;
+    let indexOfFirstFund = currentPage * this.state.fundsPerPage;
+    let indexOfLastFund = indexOfFirstFund + this.state.fundsPerPage;
+    let currentFunds = this.state.allFunds.slice(
+      indexOfFirstFund,
+      indexOfLastFund
+    );
+    this.setState({
+      ...this.state,
+      currentPage: currentPage,
+      indexOfFirstFund: indexOfFirstFund,
+      indexOfLastFund: indexOfLastFund,
+      currentFunds: currentFunds,
+    });
+  };
 
   render() {
     return (
