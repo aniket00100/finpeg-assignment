@@ -1,48 +1,26 @@
 import React from "react";
-import Masonry from "react-masonry-css";
 
 import TopNavbar from "./Navbars/TopNavbar";
 import BottomNavbar from "./Navbars/BottomNavbar";
-import Card from "./Card/Card";
-import Card2 from "./Card/Card2";
+import CardGroup from "./CardGroup/CardGroup";
+import SearchBar from "./SearchBar/SearchBar";
+import BadFix from "./BadFix/BadFix";
+// import Funds from "../assets/funds.json";
 
 function App() {
-    return (
-        <div>
-            <TopNavbar/>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            {/* <h1>Finpeg-Assignment</h1> */}
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                        <Card2/>
-                    </div>
-                </div>
-
-            </div>
-            <BottomNavbar/>
-        </div>
-    );
+  // console.log(Funds.result.funds);
+  return (
+    <div>
+      <TopNavbar />
+      <BadFix />
+      <div className="container">
+        <SearchBar />
+      </div>
+      <CardGroup />
+      <BottomNavbar />
+      <BadFix />
+    </div>
+  );
 }
 
 export default App;
